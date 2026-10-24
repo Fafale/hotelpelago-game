@@ -6,7 +6,7 @@ extends Node
 signal updated(creds: APCredentials)
 
 ## The host to connect to.
-var ip: String = "archipelago.gg"
+var ip: String = "localhost"
 ## The port to connect to. If left empty will default to [code]"38281"[/code].
 var port: String = "" :
 	get:
@@ -14,7 +14,7 @@ var port: String = "" :
 			return "38281"
 		return port
 ## The slot name to connect to.
-var slot: String = ""
+var slot: String = "Player1"
 ## The room password.
 var pwd: String = ""
 

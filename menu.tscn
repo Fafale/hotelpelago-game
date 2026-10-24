@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bwwo5uigrb3g4"]
+
+[ext_resource type="Script" uid="uid://bt4l14lkiugq" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="PackedScene" uid="uid://cn7ah7d3ep4de" path="res://addons/godot_ap/ui/common_client.tscn" id="2_ouk20"]
+
+[node name="Control" type="Control" unique_id=1944271775]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="CommonClient" parent="." unique_id=1102915545 instance=ExtResource("2_ouk20")]
+layout_mode = 1
