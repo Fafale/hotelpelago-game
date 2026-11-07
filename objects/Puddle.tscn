@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cwdcspuvu8xw0"]
+
+[ext_resource type="Texture2D" uid="uid://cqak3lnkhkta0" path="res://sprites/puddle.png" id="1_y0yye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mvjs"]
+size = Vector2(28, 26)
+
+[node name="Puddle" type="Area2D" unique_id=1989389813]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=681235103]
+texture = ExtResource("1_y0yye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630321809]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_6mvjs")

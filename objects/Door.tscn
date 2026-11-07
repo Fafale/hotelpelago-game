@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dbmwp7kmc2qrv"]
+
+[ext_resource type="Texture2D" uid="uid://lajry0kffm1m" path="res://sprites/door.png" id="1_luxoq"]
+[ext_resource type="Script" uid="uid://csu43mho87fkr" path="res://objects/door.gd" id="1_ux33c"]
+[ext_resource type="Texture2D" uid="uid://pyo7aceaaa8f" path="res://sprites/lock.png" id="2_g8xhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mvjs"]
+size = Vector2(62, 62)
+
+[node name="Door" type="Area2D" unique_id=723496599]
+script = ExtResource("1_ux33c")
+
+[node name="Door_Sprite" type="Sprite2D" parent="." unique_id=195590671]
+texture = ExtResource("1_luxoq")
+
+[node name="Door_Collision" type="CollisionShape2D" parent="." unique_id=345841493]
+shape = SubResource("RectangleShape2D_6mvjs")
+
+[node name="Lock_Sprite" type="Sprite2D" parent="." unique_id=382046657]
+visible = false
+position = Vector2(20, 8)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("2_g8xhb")

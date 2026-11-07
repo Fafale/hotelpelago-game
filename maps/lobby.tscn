@@ -1,0 +1,79 @@
+[gd_scene format=4 uid="uid://b3u5d38fnygj2"]
+
+[ext_resource type="Texture2D" uid="uid://bej04g21dihcf" path="res://maps/images/lobby.png" id="1_62t3n"]
+[ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="2_5xsys"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="2_oynvy"]
+[ext_resource type="Texture2D" uid="uid://crswjrppe8u35" path="res://maps/images/tile.png" id="3_ng2wx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xsys"]
+texture = ExtResource("3_ng2wx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_6mvjs"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5xsys")
+
+[node name="Lobby" type="Node2D" unique_id=1133661239]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1715122821]
+texture = ExtResource("1_62t3n")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Doors" type="Node2D" parent="." unique_id=218142146]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Door_DiningRoom" parent="Doors" unique_id=723496599 instance=ExtResource("2_5xsys")]
+position = Vector2(43, 89)
+related_unlock = 1
+
+[node name="Door_Garden" parent="Doors" unique_id=903701968 instance=ExtResource("2_5xsys")]
+position = Vector2(604, 66)
+
+[node name="Door_Staircase" parent="Doors" unique_id=882300378 instance=ExtResource("2_5xsys")]
+position = Vector2(1229, 69)
+related_unlock = 9
+
+[node name="Door_Elevator" parent="Doors" unique_id=1645059065 instance=ExtResource("2_5xsys")]
+position = Vector2(1229, 210)
+related_unlock = 8
+
+[node name="Door_Laundry" parent="Doors" unique_id=514134647 instance=ExtResource("2_5xsys")]
+position = Vector2(1232, 515)
+related_unlock = 6
+
+[node name="Door_Storeroom" parent="Doors" unique_id=1466881895 instance=ExtResource("2_5xsys")]
+position = Vector2(466, 685)
+related_unlock = 5
+
+[node name="Door_PoolArea" parent="Doors" unique_id=50324071 instance=ExtResource("2_5xsys")]
+position = Vector2(44, 499)
+related_unlock = 3
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_oynvy")]
+position = Vector2(611, 308)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1973744756]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 736
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="MapBorder" type="TileMapLayer" parent="." unique_id=450739175]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_6mvjs")
+metadata/_edit_lock_ = true
+
+[node name="Table" type="StaticBody2D" parent="." unique_id=1892498739]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Table" unique_id=374461466]
+polygon = PackedVector2Array(298, 732, 279, 533, 355, 474, 923, 423, 970, 474, 992, 609, 954, 629, 903, 619, 876, 543, 701, 547, 393, 593, 414, 745)
