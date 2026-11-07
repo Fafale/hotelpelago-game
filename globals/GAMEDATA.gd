@@ -99,7 +99,8 @@ enum MAP_UNLOCKS {
 	StaircasePass,
 	GuestRoomA1Key,
 	GuestRoomB3Key,
-	GuestRoomC2Key
+	GuestRoomC2Key,
+	NONE
 }
 
 var MAP_UNLOCKS_NAME_TO_ENUM = {

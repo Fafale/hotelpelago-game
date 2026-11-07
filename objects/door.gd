@@ -6,8 +6,9 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	update_lock()
-	GAMESTATE.connect("update_map_unlocks", update_lock)
+	if related_unlock != GAMEDATA.MAP_UNLOCKS.NONE:
+		update_lock()
+		GAMESTATE.connect("update_map_unlocks", update_lock)
 
 func update_lock() -> void:
 	lock_sprite.visible = not GAMESTATE.map_unlocks[related_unlock]
