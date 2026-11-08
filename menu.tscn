@@ -21,6 +21,12 @@ script = ExtResource("1_ouk20")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70719728]
 
+[node name="Label_HeldItem" type="Label" parent="CanvasLayer" unique_id=809773064]
+offset_right = 199.0
+offset_bottom = 35.0
+theme_override_constants/outline_size = 7
+text = "held item: None"
+
 [node name="FadeBlack" type="TextureRect" parent="CanvasLayer" unique_id=2106786968]
 visible = false
 self_modulate = Color(1, 1, 1, 0)

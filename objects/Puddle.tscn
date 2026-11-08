@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://cwdcspuvu8xw0"]
 
+[ext_resource type="Script" uid="uid://dqr5mpk4elvom" path="res://objects/interactable.gd" id="1_jiela"]
 [ext_resource type="Texture2D" uid="uid://cqak3lnkhkta0" path="res://sprites/puddle.png" id="1_y0yye"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mvjs"]
-size = Vector2(28, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jiela"]
+radius = 16.03122
 
 [node name="Puddle" type="Area2D" unique_id=1989389813]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_jiela")
+required_held_item = "Mop & bucket"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=681235103]
 texture = ExtResource("1_y0yye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630321809]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_6mvjs")
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_jiela")

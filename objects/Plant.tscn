@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dnpqaeusjgwe4"]
 
 [ext_resource type="Texture2D" uid="uid://8t1n67bqaino" path="res://sprites/plant.png" id="1_3saan"]
-[ext_resource type="Script" uid="uid://dnbi8yy4v4vt6" path="res://objects/plant.gd" id="1_76co2"]
+[ext_resource type="Script" uid="uid://dqr5mpk4elvom" path="res://objects/interactable.gd" id="1_76co2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6mvjs"]
 radius = 49.365982
@@ -14,6 +14,8 @@ height = 66.0
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_76co2")
+required_held_item = "Pruning Shears"
+completed_sprite_pos = 32
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1981570331]
 texture = ExtResource("1_3saan")

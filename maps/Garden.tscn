@@ -4,6 +4,8 @@
 [ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="2_yc6kx"]
 [ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="3_v43jn"]
 [ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="4_bwdrj"]
+[ext_resource type="Script" uid="uid://by7scny0uifpt" path="res://objects/events/interact_event.gd" id="5_walbs"]
+[ext_resource type="PackedScene" uid="uid://dnpqaeusjgwe4" path="res://objects/Plant.tscn" id="6_c3380"]
 
 [node name="Garden" type="Node2D" unique_id=2068508994]
 
@@ -62,3 +64,25 @@ position = Vector2(1073, 452)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/Mud" unique_id=1629830611]
 polygon = PackedVector2Array(-13, 235, -139, 200, -97, 53, -110, -31, -34, -104, -66, -152, -44, -225, 29, -237, 54, -267, 104, -243, 104, -155, 119, -124, 87, -39, 105, -18, 72, 62, 42, 83, 70, 144, 45, 206)
+
+[node name="Plants" type="Node2D" parent="Events" unique_id=928987126]
+script = ExtResource("5_walbs")
+related_location_id = 12
+
+[node name="Plant" parent="Events/Plants" unique_id=590766414 instance=ExtResource("6_c3380")]
+position = Vector2(401, 83)
+
+[node name="Plant2" parent="Events/Plants" unique_id=24974233 instance=ExtResource("6_c3380")]
+position = Vector2(132, 81)
+
+[node name="Plant3" parent="Events/Plants" unique_id=1319506085 instance=ExtResource("6_c3380")]
+position = Vector2(861, 82)
+
+[node name="Plant4" parent="Events/Plants" unique_id=1685444266 instance=ExtResource("6_c3380")]
+position = Vector2(1159, 81)
+
+[node name="Plant5" parent="Events/Plants" unique_id=1905397487 instance=ExtResource("6_c3380")]
+position = Vector2(776, 687)
+
+[node name="Plant6" parent="Events/Plants" unique_id=904210254 instance=ExtResource("6_c3380")]
+position = Vector2(350, 680)

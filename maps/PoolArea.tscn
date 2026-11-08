@@ -1,0 +1,124 @@
+[gd_scene format=4 uid="uid://c0l4r4tgyav7l"]
+
+[ext_resource type="Texture2D" uid="uid://ekrnhivxcvob" path="res://maps/images/pool area.png" id="1_783um"]
+[ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="2_3ap1p"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="3_vmeba"]
+[ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="4_4tosp"]
+[ext_resource type="Script" uid="uid://by7scny0uifpt" path="res://objects/events/interact_event.gd" id="4_vmeba"]
+[ext_resource type="PackedScene" uid="uid://dyu8f7ues73ys" path="res://maps/pool_area/pool_litter.tscn" id="5_4tosp"]
+[ext_resource type="PackedScene" uid="uid://bshbw1r2vjlpr" path="res://maps/pool_area/swimmer.tscn" id="5_6fe5k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6mvjs"]
+radius = 6.0
+height = 398.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_783um"]
+radius = 6.0
+height = 364.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ap1p"]
+radius = 6.0
+height = 827.99994
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vmeba"]
+radius = 6.0
+height = 394.0
+
+[node name="PoolArea" type="Node2D" unique_id=1256482236]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1243202721]
+texture = ExtResource("1_783um")
+centered = false
+
+[node name="Terrain" type="Node2D" parent="." unique_id=394070501]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="MapBorder" type="TileMapLayer" parent="Terrain" unique_id=844838406]
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("2_3ap1p")
+
+[node name="PoolBorder" type="StaticBody2D" parent="Terrain" unique_id=1900383139]
+position = Vector2(689, 369)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/PoolBorder" unique_id=1400149198]
+position = Vector2(-217, -190)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6mvjs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/PoolBorder" unique_id=21051237]
+position = Vector2(232, -190)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_783um")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/PoolBorder" unique_id=223339619]
+position = Vector2(-3, 196)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3ap1p")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/PoolBorder" unique_id=1746255595]
+position = Vector2(-413, 3)
+shape = SubResource("CapsuleShape2D_vmeba")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/PoolBorder" unique_id=1594794570]
+position = Vector2(411, 3)
+shape = SubResource("CapsuleShape2D_vmeba")
+
+[node name="Doors" type="Node2D" parent="." unique_id=1219724550]
+
+[node name="DoorLobby" parent="Doors" unique_id=723496599 instance=ExtResource("4_4tosp")]
+position = Vector2(1355, 61)
+related_unlock = 13
+dest_map = "Lobby"
+dest_pos = Vector2(42, 448)
+
+[node name="DoorSauna" parent="Doors" unique_id=465237359 instance=ExtResource("4_4tosp")]
+position = Vector2(97, 678)
+related_unlock = 4
+
+[node name="Events" type="Node2D" parent="." unique_id=1073029125]
+position = Vector2(0, -9)
+
+[node name="Swimmers" type="Node2D" parent="Events" unique_id=323248249]
+script = ExtResource("4_vmeba")
+related_location_id = 30
+
+[node name="PoolLitter" parent="Events/Swimmers" unique_id=1759755628 instance=ExtResource("5_6fe5k")]
+position = Vector2(481, 367)
+
+[node name="PoolLitter2" parent="Events/Swimmers" unique_id=1163939372 instance=ExtResource("5_6fe5k")]
+position = Vector2(705, 461)
+
+[node name="PoolLitter3" parent="Events/Swimmers" unique_id=1119297715 instance=ExtResource("5_6fe5k")]
+position = Vector2(1001, 380)
+
+[node name="CleanPool" type="Node2D" parent="Events" unique_id=813540515]
+script = ExtResource("4_vmeba")
+related_location_id = 27
+metadata/_edit_group_ = true
+
+[node name="PoolLitter" parent="Events/CleanPool" unique_id=74319221 instance=ExtResource("5_4tosp")]
+position = Vector2(359, 284)
+
+[node name="PoolLitter2" parent="Events/CleanPool" unique_id=1118279843 instance=ExtResource("5_4tosp")]
+position = Vector2(464, 524)
+
+[node name="PoolLitter3" parent="Events/CleanPool" unique_id=1969307982 instance=ExtResource("5_4tosp")]
+position = Vector2(953, 273)
+
+[node name="PoolLitter4" parent="Events/CleanPool" unique_id=1250373189 instance=ExtResource("5_4tosp")]
+position = Vector2(809, 511)
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("3_vmeba")]
+position = Vector2(386, 113)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1894059037]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1408
+limit_bottom = 736
+limit_smoothed = true
+position_smoothing_enabled = true

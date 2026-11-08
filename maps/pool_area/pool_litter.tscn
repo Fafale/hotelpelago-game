@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dyu8f7ues73ys"]
+
+[ext_resource type="Script" uid="uid://dqr5mpk4elvom" path="res://objects/interactable.gd" id="1_ts7sj"]
+[ext_resource type="Texture2D" uid="uid://bdyad705203w0" path="res://sprites/pool_litter.png" id="2_nibgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mvjs"]
+radius = 19.026299
+
+[node name="PoolLitter" type="Area2D" unique_id=1759755628]
+script = ExtResource("1_ts7sj")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=48266420]
+texture = ExtResource("2_nibgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888779200]
+shape = SubResource("CircleShape2D_6mvjs")

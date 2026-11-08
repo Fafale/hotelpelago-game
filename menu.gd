@@ -20,6 +20,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if GAMESTATE.player_active and Input.is_action_just_pressed("toggle_console"):
 		node_commonclient.visible = not node_commonclient.visible
+	
+	$CanvasLayer/Label_HeldItem.text = "Held item: " + GAMESTATE.get_held_item()
 
 func when_roominfo(conn, _json):
 	conn.obtained_item.connect(GAMESTATE.when_obtained_item)

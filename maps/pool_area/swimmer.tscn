@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bshbw1r2vjlpr"]
+
+[ext_resource type="Script" uid="uid://dqr5mpk4elvom" path="res://objects/interactable.gd" id="1_arcxi"]
+[ext_resource type="Texture2D" uid="uid://ccu5qtalruuq3" path="res://sprites/swimmer.png" id="2_arcxi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mvjs"]
+radius = 29.068884
+
+[node name="PoolLitter" type="Area2D" unique_id=1759755628]
+script = ExtResource("1_arcxi")
+required_held_item = "Swim Rings"
+completed_sprite_pos = 64
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=48266420]
+texture = ExtResource("2_arcxi")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=888779200]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_6mvjs")
