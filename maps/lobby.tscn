@@ -53,6 +53,8 @@ related_unlock = 8
 [node name="Door_Laundry" parent="Doors" unique_id=514134647 instance=ExtResource("2_5xsys")]
 position = Vector2(1232, 515)
 related_unlock = 6
+dest_map = "Laundry"
+dest_pos = Vector2(109, 119)
 
 [node name="Door_Storeroom" parent="Doors" unique_id=1466881895 instance=ExtResource("2_5xsys")]
 position = Vector2(466, 685)
@@ -107,7 +109,7 @@ position = Vector2(759, 251)
 position = Vector2(384, 249)
 
 [node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_oynvy")]
-position = Vector2(42, 448)
+position = Vector2(668, 349)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1973744756]

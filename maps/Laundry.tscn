@@ -1,0 +1,70 @@
+[gd_scene format=4 uid="uid://47qcbt4g02hl"]
+
+[ext_resource type="Texture2D" uid="uid://dlru2sec3jx18" path="res://maps/images/laundry.png" id="1_ddgf8"]
+[ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="2_0vekq"]
+[ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="3_0vekq"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="3_3irhx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6mvjs"]
+radius = 41.0
+height = 628.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hebwo"]
+radius = 37.0
+height = 130.00003
+
+[node name="Laundry" type="Node2D" unique_id=884233598]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=192165603]
+texture = ExtResource("1_ddgf8")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Terrain" type="Node2D" parent="." unique_id=2136554323]
+
+[node name="MapBorder" type="TileMapLayer" parent="Terrain" unique_id=456700849]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAAAAAAAAAAAAAAAjAAEAAAAAAAAAAAAjAAIAAAAAAAAAAAAjAAMAAAAAAAAAAAAjAAQAAAAAAAAAAAAjAAUAAAAAAAAAAAAjAAYAAAAAAAAAAAAjAAcAAAAAAAAAAAAjAAgAAAAAAAAAAAAjAAkAAAAAAAAAAAAjAAoAAAAAAAAAAAAjAAsAAAAAAAAAAAAjAAwAAAAAAAAAAAAjAA0AAAAAAAAAAAAjAA4AAAAAAAAAAAAjAA8AAAAAAAAAAAAjABAAAAAAAAAAAAAjABEAAAAAAAAAAAAiABIAAAAAAAAAAAAhABIAAAAAAAAAAAAgABIAAAAAAAAAAAAfABIAAAAAAAAAAAAeABIAAAAAAAAAAAAdABIAAAAAAAAAAAAcABIAAAAAAAAAAAAbABIAAAAAAAAAAAAaABIAAAAAAAAAAAAZABIAAAAAAAAAAAAYABIAAAAAAAAAAAAXABIAAAAAAAAAAAAWABIAAAAAAAAAAAAVABIAAAAAAAAAAAAUABIAAAAAAAAAAAATABIAAAAAAAAAAAASABIAAAAAAAAAAAARABIAAAAAAAAAAAAQABIAAAAAAAAAAAAPABIAAAAAAAAAAAAOABIAAAAAAAAAAAANABIAAAAAAAAAAAAMABIAAAAAAAAAAAALABIAAAAAAAAAAAAKABIAAAAAAAAAAAAJABIAAAAAAAAAAAAIABIAAAAAAAAAAAAHABIAAAAAAAAAAAAGABIAAAAAAAAAAAAFABIAAAAAAAAAAAAEABIAAAAAAAAAAAADABIAAAAAAAAAAAACABIAAAAAAAAAAAABABIAAAAAAAAAAAAAABIAAAAAAAAAAAD//xEAAAAAAAAAAAD//xAAAAAAAAAAAAD//w8AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAA=")
+tile_set = ExtResource("2_0vekq")
+metadata/_edit_lock_ = true
+
+[node name="Walls" type="StaticBody2D" parent="Terrain" unique_id=179227492]
+position = Vector2(518, 292)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Walls" unique_id=745640543]
+position = Vector2(41, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6mvjs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/Walls" unique_id=1579561072]
+position = Vector2(-489, -6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hebwo")
+
+[node name="Doors" type="Node2D" parent="." unique_id=624530476]
+
+[node name="DoorLobby" parent="Doors" unique_id=723496599 instance=ExtResource("3_0vekq")]
+position = Vector2(57, 120)
+related_unlock = 13
+dest_map = "Lobby"
+dest_pos = Vector2(1176, 514)
+
+[node name="DoorMechanical" parent="Doors" unique_id=747479594 instance=ExtResource("3_0vekq")]
+position = Vector2(55, 461)
+related_unlock = 7
+dest_map = "Mechanical Room"
+dest_pos = Vector2(1019, 197)
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("3_3irhx")]
+position = Vector2(109, 119)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=235831432]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1120
+limit_bottom = 576
+limit_smoothed = true
+position_smoothing_enabled = true

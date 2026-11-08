@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ytkqcx7cru1l"]
+
+[ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="1_7gnvg"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="2_yeiwy"]
+
+[node name="Placeholder" type="Node2D" unique_id=884233598]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=271005195]
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1462526563]
+
+[node name="MapBorder" type="TileMapLayer" parent="Terrain" unique_id=19305316]
+tile_set = ExtResource("1_7gnvg")
+
+[node name="Doors" type="Node2D" parent="." unique_id=2088155573]
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_yeiwy")]
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1590293992]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+limit_smoothed = true
+position_smoothing_enabled = true

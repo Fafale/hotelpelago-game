@@ -13,6 +13,8 @@ var player_control: bool = true
 var preload_lobby = preload("res://maps/Lobby.tscn")
 var preload_garden = preload("res://maps/Garden.tscn")
 var preload_pool_area = preload("res://maps/PoolArea.tscn")
+var preload_mechanical_room = preload("res://maps/MechanicalRoom.tscn")
+var preload_laundry = preload("res://maps/Laundry.tscn")
 
 var received_inv_items: Dictionary[String, bool] = {
 	'Food Trolley': false,
@@ -84,6 +86,8 @@ func get_map_node(map_name: String):
 	match map_name:
 		"Garden": return preload_garden
 		"Pool Area": return preload_pool_area
+		"Laundry": return preload_laundry
+		"Mechanical Room": return preload_mechanical_room
 		_: return preload_lobby
 
 func get_held_item() -> String:

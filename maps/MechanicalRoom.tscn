@@ -1,0 +1,142 @@
+[gd_scene format=4 uid="uid://4r68h82fk2q3"]
+
+[ext_resource type="Texture2D" uid="uid://c3yw7olxl6ldg" path="res://maps/images/mechanical room.png" id="1_ppcit"]
+[ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="1_yit6k"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="2_ppcit"]
+[ext_resource type="Script" uid="uid://by7scny0uifpt" path="res://objects/events/interact_event.gd" id="3_n4ci5"]
+[ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="3_xgsjn"]
+[ext_resource type="Script" uid="uid://dqr5mpk4elvom" path="res://objects/interactable.gd" id="4_bgxre"]
+[ext_resource type="Texture2D" uid="uid://cqgg24cmxhv5x" path="res://sprites/button.png" id="4_uyef4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6mvjs"]
+radius = 47.0
+height = 536.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ppcit"]
+radius = 47.0
+height = 332.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lrgis"]
+radius = 30.0
+height = 184.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4ci5"]
+radius = 37.0
+height = 256.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uyef4"]
+radius = 50.0
+height = 284.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mvjs"]
+radius = 48.507732
+
+[node name="MechanicalRoom" type="Node2D" unique_id=884233598]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=271005195]
+texture = ExtResource("1_ppcit")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1462526563]
+
+[node name="MapBorder" type="TileMapLayer" parent="Terrain" unique_id=19305316]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAWAP//AAAAAAAAAAAXAP//AAAAAAAAAAAYAP//AAAAAAAAAAAZAP//AAAAAAAAAAAaAP//AAAAAAAAAAAbAP//AAAAAAAAAAAcAP//AAAAAAAAAAAdAP//AAAAAAAAAAAeAP//AAAAAAAAAAAfAP//AAAAAAAAAAAgAP//AAAAAAAAAAAhAP//AAAAAAAAAAAiAP//AAAAAAAAAAAjAAAAAAAAAAAAAAAjAAEAAAAAAAAAAAAjAAIAAAAAAAAAAAAjAAMAAAAAAAAAAAAjAAQAAAAAAAAAAAAjAAUAAAAAAAAAAAAjAAYAAAAAAAAAAAAjAAcAAAAAAAAAAAAjAAgAAAAAAAAAAAAjAAkAAAAAAAAAAAAjAAoAAAAAAAAAAAAjAAsAAAAAAAAAAAAjAAwAAAAAAAAAAAAjAA0AAAAAAAAAAAAjAA4AAAAAAAAAAAAjAA8AAAAAAAAAAAAjABAAAAAAAAAAAAAjABEAAAAAAAAAAAAiABIAAAAAAAAAAAAhABIAAAAAAAAAAAAgABIAAAAAAAAAAAAfABIAAAAAAAAAAAAeABIAAAAAAAAAAAAdABIAAAAAAAAAAAAcABIAAAAAAAAAAAAbABIAAAAAAAAAAAAaABIAAAAAAAAAAAAZABIAAAAAAAAAAAAYABIAAAAAAAAAAAAXABIAAAAAAAAAAAAWABIAAAAAAAAAAAAVABIAAAAAAAAAAAAUABIAAAAAAAAAAAATABIAAAAAAAAAAAASABIAAAAAAAAAAAARABIAAAAAAAAAAAAQABIAAAAAAAAAAAAPABIAAAAAAAAAAAAOABIAAAAAAAAAAAANABIAAAAAAAAAAAAMABIAAAAAAAAAAAALABIAAAAAAAAAAAAKABIAAAAAAAAAAAAJABIAAAAAAAAAAAAIABIAAAAAAAAAAAAHABIAAAAAAAAAAAAGABIAAAAAAAAAAAAFABIAAAAAAAAAAAAEABIAAAAAAAAAAAADABIAAAAAAAAAAAACABIAAAAAAAAAAAABABIAAAAAAAAAAAAAABIAAAAAAAAAAAD//xEAAAAAAAAAAAD//xAAAAAAAAAAAAD//w8AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAA=")
+tile_set = ExtResource("1_yit6k")
+metadata/_edit_lock_ = true
+
+[node name="Pipes" type="StaticBody2D" parent="Terrain" unique_id=141034107]
+position = Vector2(568, 281)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Pipes" unique_id=1104799241]
+position = Vector2(-388, -260)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_6mvjs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/Pipes" unique_id=40362860]
+position = Vector2(-453, 244)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ppcit")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/Pipes" unique_id=784330140]
+position = Vector2(525, 283)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_lrgis")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/Pipes" unique_id=1086325386]
+position = Vector2(516, -248)
+shape = SubResource("CapsuleShape2D_lrgis")
+
+[node name="Table" type="StaticBody2D" parent="Terrain" unique_id=499735158]
+position = Vector2(739, 386)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Table" unique_id=1075285249]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_n4ci5")
+
+[node name="Motor" type="StaticBody2D" parent="Terrain" unique_id=986919382]
+position = Vector2(147, 233)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Motor" unique_id=376443894]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_uyef4")
+
+[node name="Events" type="Node2D" parent="." unique_id=325190390]
+
+[node name="Button" type="Node2D" parent="Events" unique_id=693250766]
+script = ExtResource("3_n4ci5")
+related_location_id = 55
+
+[node name="Button" type="Area2D" parent="Events/Button" unique_id=2030830573]
+position = Vector2(582, 63)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_bgxre")
+completed_sprite_pos = 64
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Events/Button/Button" unique_id=1337411921]
+texture = ExtResource("4_uyef4")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Events/Button/Button" unique_id=32679023]
+shape = SubResource("CircleShape2D_6mvjs")
+
+[node name="Doors" type="Node2D" parent="." unique_id=2088155573]
+
+[node name="DoorLaundry" parent="Doors" unique_id=723496599 instance=ExtResource("3_xgsjn")]
+position = Vector2(1069, 201)
+related_unlock = 6
+dest_map = "Laundry"
+dest_pos = Vector2(102, 463)
+
+[node name="DoorStoreroom" parent="Doors" unique_id=62776629 instance=ExtResource("3_xgsjn")]
+position = Vector2(809, 47)
+related_unlock = 5
+dest_map = "Storeroom"
+
+[node name="DoorSauna" parent="Doors" unique_id=600538419 instance=ExtResource("3_xgsjn")]
+position = Vector2(40, 134)
+related_unlock = 4
+dest_map = "Sauna"
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_ppcit")]
+position = Vector2(615, 208)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1590293992]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1120
+limit_bottom = 576
+limit_smoothed = true
+position_smoothing_enabled = true
