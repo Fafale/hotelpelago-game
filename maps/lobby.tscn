@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://crswjrppe8u35" path="res://maps/images/tile.png" id="3_ng2wx"]
 [ext_resource type="Script" uid="uid://bgeh87oid6817" path="res://maps/checkin.gd" id="3_qmmmc"]
 [ext_resource type="Texture2D" uid="uid://c58jpo642ui3k" path="res://sprites/guest.png" id="3_scr03"]
+[ext_resource type="Script" uid="uid://bpjrlmx586h8w" path="res://objects/events/plants.gd" id="6_mj7ku"]
+[ext_resource type="PackedScene" uid="uid://dnpqaeusjgwe4" path="res://objects/Plant.tscn" id="7_r7t2y"]
 
 [sub_resource type="Gradient" id="Gradient_j0sxl"]
 offsets = PackedFloat32Array(0)
@@ -75,7 +77,11 @@ related_unlock = 3
 
 [node name="Checkin" type="Area2D" parent="Events" unique_id=910293487]
 position = Vector2(783, 587)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_qmmmc")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="AreaIndicator" type="Sprite2D" parent="Events/Checkin" unique_id=546380312]
 self_modulate = Color(1, 1, 1, 0.46666667)
@@ -97,8 +103,21 @@ texture = ExtResource("3_scr03")
 position = Vector2(39, -202)
 texture = ExtResource("3_scr03")
 
+[node name="Plants" type="Node2D" parent="Events" unique_id=2076366272]
+script = ExtResource("6_mj7ku")
+related_location_id = 8
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Plant2" parent="Events/Plants" unique_id=590766414 instance=ExtResource("7_r7t2y")]
+position = Vector2(759, 251)
+
+[node name="Plant" parent="Events/Plants" unique_id=1902054251 instance=ExtResource("7_r7t2y")]
+position = Vector2(384, 249)
+
 [node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_oynvy")]
 position = Vector2(611, 308)
+collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1973744756]
 zoom = Vector2(1.4, 1.4)

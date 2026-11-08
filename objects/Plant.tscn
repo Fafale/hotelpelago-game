@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dnpqaeusjgwe4"]
+
+[ext_resource type="Texture2D" uid="uid://8t1n67bqaino" path="res://sprites/plant.png" id="1_3saan"]
+[ext_resource type="Script" uid="uid://dnbi8yy4v4vt6" path="res://objects/plant.gd" id="1_76co2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mvjs"]
+radius = 49.365982
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5oq7j"]
+radius = 17.0
+height = 66.0
+
+[node name="Plant" type="Area2D" unique_id=590766414]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_76co2")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1981570331]
+texture = ExtResource("1_3saan")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 64)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=242821807]
+shape = SubResource("CircleShape2D_6mvjs")
+
+[node name="CollisionBody" type="StaticBody2D" parent="." unique_id=1220703202]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="CollisionBody" unique_id=1480650078]
+shape = SubResource("CapsuleShape2D_5oq7j")
