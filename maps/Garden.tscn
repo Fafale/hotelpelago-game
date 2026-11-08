@@ -43,7 +43,7 @@ metadata/_edit_group_ = true
 polygon = PackedVector2Array(75, 28, -70, 29, -87, -39, 87, -52)
 
 [node name="Player" parent="." unique_id=1343783944 instance=ExtResource("4_bwdrj")]
-position = Vector2(640, 684)
+position = Vector2(565, 649)
 metadata/_edit_group_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=78161807]

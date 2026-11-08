@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bt4l14lkiugq" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://cn7ah7d3ep4de" path="res://addons/godot_ap/ui/common_client.tscn" id="2_ouk20"]
-[ext_resource type="PackedScene" uid="uid://b3u5d38fnygj2" path="res://maps/Lobby.tscn" id="3_mae5d"]
 
 [sub_resource type="Gradient" id="Gradient_mae5d"]
 offsets = PackedFloat32Array(0)
@@ -34,5 +33,3 @@ texture = SubResource("GradientTexture2D_6mvjs")
 
 [node name="GameController" type="Node2D" parent="." unique_id=1323367427]
 visible = false
-
-[node name="Lobby" parent="GameController" unique_id=1133661239 instance=ExtResource("3_mae5d")]

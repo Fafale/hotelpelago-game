@@ -40,7 +40,7 @@ related_unlock = 1
 [node name="Door_Garden" parent="Doors" unique_id=903701968 instance=ExtResource("2_5xsys")]
 position = Vector2(604, 66)
 dest_map = "Garden"
-dest_pos = Vector2(572, 608)
+dest_pos = Vector2(572, 649)
 
 [node name="Door_Staircase" parent="Doors" unique_id=882300378 instance=ExtResource("2_5xsys")]
 position = Vector2(1229, 69)

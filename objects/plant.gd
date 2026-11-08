@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var event_node: Node2D = get_parent()
-@onready var related_id
 @onready var sprite: Sprite2D = $Sprite
 
 func _ready() -> void:
@@ -14,6 +13,11 @@ func when_player_interacted(held_item: String):
 				prune_plant()
 
 func prune_plant() -> void:
-	sprite.region_rect.position.x = 32
+	set_pruned()
 	event_node.emit_signal("child_plant_pruned")
-	GAMESTATE.player_interact.disconnect(when_player_interacted)
+
+func set_pruned() -> void:
+	sprite.region_rect.position.x = 32
+	
+	if GAMESTATE.player_interact.is_connected(when_player_interacted):
+		GAMESTATE.player_interact.disconnect(when_player_interacted)

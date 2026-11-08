@@ -13,11 +13,7 @@ var unchecked_locations: Array[int] = []
 var guest_count = 3
 
 func _ready() -> void:
-	if Archipelago.is_ap_connected():
-		prepare_event(null, null)
-	else:
-		first_screen = true
-		Archipelago.roominfo.connect(prepare_event)
+	prepare_event(null, null)
 
 func prepare_event(_conn, _json) -> void:
 	for id in GUESTS_LOCATION_ID:

@@ -9,6 +9,10 @@ var pruned_plants: int = 0
 
 func _ready() -> void:
 	child_plant_pruned.connect(when_child_plant_pruned)
+	
+	if Archipelago.location_checked(related_location_id, false):
+		for child in get_children():
+			child.set_pruned()
 
 func when_child_plant_pruned() -> void:
 	pruned_plants += 1

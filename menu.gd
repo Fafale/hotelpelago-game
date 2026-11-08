@@ -5,6 +5,9 @@ extends Control
 
 @onready var node_screenfade: TextureRect = $CanvasLayer/FadeBlack
 
+const STARTING_MAP = "Lobby"
+const STARTING_POS = Vector2(611, 308)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Archipelago.load_console(node_commonclient, false)
@@ -25,6 +28,8 @@ func when_roominfo(conn, _json):
 	
 	GAMESTATE.player_active = true
 	node_gamecontroller.show()
+	
+	when_request_map_change(STARTING_MAP, STARTING_POS)
 
 func when_disconnected():
 	GAMESTATE.player_active = false
@@ -40,8 +45,9 @@ func when_request_map_change(new_map: String, player_position: Vector2) -> void:
 	screen_fade_black(change_map.bind(new_map, player_position))
 
 func change_map(new_map: String, player_position: Vector2) -> void:
-	var cur_map = node_gamecontroller.get_child(0)
-	cur_map.queue_free()
+	if node_gamecontroller.get_child_count() > 0:
+		var cur_map = node_gamecontroller.get_child(0)
+		cur_map.queue_free()
 	
 	var map_inst = GAMESTATE.get_map_node(new_map).instantiate()
 	node_gamecontroller.add_child(map_inst)
