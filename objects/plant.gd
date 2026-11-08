@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var event_node: Node2D = get_parent()
+@onready var related_id
 @onready var sprite: Sprite2D = $Sprite
 
 func _ready() -> void:

@@ -3,8 +3,15 @@ extends Node
 signal update_map_unlocks
 
 signal player_interact(held_item: String)
+signal player_enter_door
+
+signal request_map_change(destination: String, player_position: Vector2)
 
 var player_active: bool = false
+var player_control: bool = true
+
+var preload_lobby = preload("res://maps/Lobby.tscn")
+var preload_garden = preload("res://maps/Garden.tscn")
 
 var map_unlocks: Dictionary[GAMEDATA.MAP_UNLOCKS, bool] = {
 	GAMEDATA.MAP_UNLOCKS.GardenKey: false,
@@ -36,3 +43,8 @@ func when_obtained_item(item: NetworkItem) -> void:
 			pass
 	
 	print("[OBTAINED ITEM]: " + str(item))
+
+func get_map_node(map_name: String):
+	match map_name:
+		"Garden": return preload_garden
+		_: return preload_lobby

@@ -1,0 +1,64 @@
+[gd_scene format=4 uid="uid://dxp722ixowyii"]
+
+[ext_resource type="Texture2D" uid="uid://d3mtdjvacpqrg" path="res://maps/images/garden.png" id="1_mymby"]
+[ext_resource type="TileSet" uid="uid://prooxormes7m" path="res://maps/tile_set.tres" id="2_yc6kx"]
+[ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="3_v43jn"]
+[ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="4_bwdrj"]
+
+[node name="Garden" type="Node2D" unique_id=2068508994]
+
+[node name="BG" type="Sprite2D" parent="." unique_id=537452151]
+texture = ExtResource("1_mymby")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Doors" type="Node2D" parent="." unique_id=768933710]
+
+[node name="Door" parent="Doors" unique_id=723496599 instance=ExtResource("3_v43jn")]
+position = Vector2(565, 700)
+related_unlock = 13
+dest_map = "Lobby"
+dest_pos = Vector2(604, 120)
+
+[node name="Terrain" type="Node2D" parent="." unique_id=1224170367]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Terrain" unique_id=2007403144]
+tile_map_data = PackedByteArray("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")
+tile_set = ExtResource("2_yc6kx")
+metadata/_edit_lock_ = true
+
+[node name="HosePump" type="StaticBody2D" parent="Terrain" unique_id=2141368434]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/HosePump" unique_id=373827884]
+polygon = PackedVector2Array(-5, 585, 39, 581, 96, 596, 110, 622, 131, 736, -7, 746)
+
+[node name="TrashCan" type="StaticBody2D" parent="Terrain" unique_id=2050397987]
+position = Vector2(624, 81)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain/TrashCan" unique_id=725595267]
+polygon = PackedVector2Array(75, 28, -70, 29, -87, -39, 87, -52)
+
+[node name="Player" parent="." unique_id=1343783944 instance=ExtResource("4_bwdrj")]
+position = Vector2(640, 684)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=78161807]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 736
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Events" type="Node2D" parent="." unique_id=328451680]
+
+[node name="Mud" type="StaticBody2D" parent="Events" unique_id=805526582]
+position = Vector2(1073, 452)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Events/Mud" unique_id=1629830611]
+polygon = PackedVector2Array(-13, 235, -139, 200, -97, 53, -110, -31, -34, -104, -66, -152, -44, -225, 29, -237, 54, -267, 104, -243, 104, -155, 119, -124, 87, -39, 105, -18, 72, 62, 42, 83, 70, 144, 45, 206)

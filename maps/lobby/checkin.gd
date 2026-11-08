@@ -6,6 +6,9 @@ const GUESTS_LOCATION_ID = [1,2,3]
 @onready var sprite_guest2: Sprite2D = $Guest2
 @onready var sprite_guest3: Sprite2D = $Guest3
 
+# Set to true when it's the Lobby loaded on game start (need delay to get server info)
+var first_screen: bool = false
+
 var unchecked_locations: Array[int] = []
 var guest_count = 3
 
@@ -13,10 +16,10 @@ func _ready() -> void:
 	if Archipelago.is_ap_connected():
 		prepare_event(null, null)
 	else:
+		first_screen = true
 		Archipelago.roominfo.connect(prepare_event)
 
 func prepare_event(_conn, _json) -> void:
-	await get_tree().create_timer(0.5).timeout
 	for id in GUESTS_LOCATION_ID:
 		if Archipelago.location_checked(id) == true: guest_count -= 1
 		else: unchecked_locations.append(id)

@@ -2,7 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bt4l14lkiugq" path="res://menu.gd" id="1_ouk20"]
 [ext_resource type="PackedScene" uid="uid://cn7ah7d3ep4de" path="res://addons/godot_ap/ui/common_client.tscn" id="2_ouk20"]
-[ext_resource type="PackedScene" uid="uid://b3u5d38fnygj2" path="res://maps/lobby.tscn" id="3_mae5d"]
+[ext_resource type="PackedScene" uid="uid://b3u5d38fnygj2" path="res://maps/Lobby.tscn" id="3_mae5d"]
+
+[sub_resource type="Gradient" id="Gradient_mae5d"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6mvjs"]
+gradient = SubResource("Gradient_mae5d")
 
 [node name="Control" type="Control" unique_id=1944271775]
 layout_mode = 3
@@ -14,6 +21,14 @@ grow_vertical = 2
 script = ExtResource("1_ouk20")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70719728]
+
+[node name="FadeBlack" type="TextureRect" parent="CanvasLayer" unique_id=2106786968]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 1286.0
+offset_bottom = 721.0
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_6mvjs")
 
 [node name="CommonClient" parent="CanvasLayer" unique_id=1102915545 instance=ExtResource("2_ouk20")]
 
