@@ -2,6 +2,8 @@ extends Node
 
 signal update_map_unlocks
 
+signal player_interact(held_item: String)
+
 var player_active: bool = false
 
 var map_unlocks: Dictionary[GAMEDATA.MAP_UNLOCKS, bool] = {

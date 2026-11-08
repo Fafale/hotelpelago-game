@@ -1,9 +1,25 @@
 [gd_scene format=4 uid="uid://b3u5d38fnygj2"]
 
 [ext_resource type="Texture2D" uid="uid://bej04g21dihcf" path="res://maps/images/lobby.png" id="1_62t3n"]
+[ext_resource type="Script" uid="uid://rtubt4530ry4" path="res://maps/lobby.gd" id="1_q70mm"]
 [ext_resource type="PackedScene" uid="uid://dbmwp7kmc2qrv" path="res://objects/Door.tscn" id="2_5xsys"]
 [ext_resource type="PackedScene" uid="uid://db6bfonis1tka" path="res://player/Player.tscn" id="2_oynvy"]
 [ext_resource type="Texture2D" uid="uid://crswjrppe8u35" path="res://maps/images/tile.png" id="3_ng2wx"]
+[ext_resource type="Script" uid="uid://bgeh87oid6817" path="res://maps/checkin.gd" id="3_qmmmc"]
+[ext_resource type="Texture2D" uid="uid://c58jpo642ui3k" path="res://sprites/guest.png" id="3_scr03"]
+
+[sub_resource type="Gradient" id="Gradient_j0sxl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.24359998, 0.87, 0.37932, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_snhpm"]
+gradient = SubResource("Gradient_j0sxl")
+width = 5
+height = 5
+fill_to = Vector2(0.5585586, 0.3153153)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mvjs"]
+size = Vector2(134, 52)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xsys"]
 texture = ExtResource("3_ng2wx")
@@ -17,6 +33,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5xsys")
 
 [node name="Lobby" type="Node2D" unique_id=1133661239]
+script = ExtResource("1_q70mm")
 
 [node name="BG" type="Sprite2D" parent="." unique_id=1715122821]
 texture = ExtResource("1_62t3n")
@@ -53,6 +70,32 @@ related_unlock = 5
 [node name="Door_PoolArea" parent="Doors" unique_id=50324071 instance=ExtResource("2_5xsys")]
 position = Vector2(44, 499)
 related_unlock = 3
+
+[node name="Events" type="Node2D" parent="." unique_id=789688334]
+
+[node name="Checkin" type="Area2D" parent="Events" unique_id=910293487]
+position = Vector2(783, 587)
+script = ExtResource("3_qmmmc")
+
+[node name="AreaIndicator" type="Sprite2D" parent="Events/Checkin" unique_id=546380312]
+self_modulate = Color(1, 1, 1, 0.46666667)
+scale = Vector2(26.69, 10.395)
+texture = SubResource("GradientTexture2D_snhpm")
+
+[node name="Collision" type="CollisionShape2D" parent="Events/Checkin" unique_id=1625432811]
+shape = SubResource("RectangleShape2D_6mvjs")
+
+[node name="Guest3" type="Sprite2D" parent="Events/Checkin" unique_id=785755919]
+position = Vector2(33, -265)
+texture = ExtResource("3_scr03")
+
+[node name="Guest2" type="Sprite2D" parent="Events/Checkin" unique_id=1701506874]
+position = Vector2(22, -237)
+texture = ExtResource("3_scr03")
+
+[node name="Guest1" type="Sprite2D" parent="Events/Checkin" unique_id=105060246]
+position = Vector2(39, -202)
+texture = ExtResource("3_scr03")
 
 [node name="Player" parent="." unique_id=1343783944 instance=ExtResource("2_oynvy")]
 position = Vector2(611, 308)

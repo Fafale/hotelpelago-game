@@ -8,7 +8,7 @@ extends Area2D
 func _ready() -> void:
 	if related_unlock != GAMEDATA.MAP_UNLOCKS.NONE:
 		update_lock()
-		GAMESTATE.connect("update_map_unlocks", update_lock)
+		GAMESTATE.update_map_unlocks.connect(update_lock)
 
 func update_lock() -> void:
 	lock_sprite.visible = not GAMESTATE.map_unlocks[related_unlock]
